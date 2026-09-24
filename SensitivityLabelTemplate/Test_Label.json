@@ -1,0 +1,5 @@
+{
+  "PartitionKey": "SensitivityLabelTemplate",
+  "RowKey": "8f721d4d-4ae8-4875-8844-0d405745cc3b",
+  "JSON": "{\n  \"DisplayName\": \"Test Label\",\n  \"Name\": \"Test-Kelvin\",\n  \"Comment\": \"\",\n  \"Settings\": [\n    \"[isparent, False]\",\n    \"[contenttype, File]\",\n    \"[tooltip, This is a Test]\",\n    \"[displayname, Test Label]\"\n  ],\n  \"LabelActions\": [],\n  \"Conditions\": [],\n  \"LocaleSettings\": [\n    \"{\\\"LocaleKey\\\":\\\"displayName\\\",\\\"Settings\\\":[{\\\"Key\\\":\\\"default\\\",\\\"Value\\\":\\\"Test Label\\\"}]}\",\n    \"{\\\"LocaleKey\\\":\\\"tooltip\\\",\\\"Settings\\\":[{\\\"Key\\\":\\\"default\\\",\\\"Value\\\":\\\"This is a Test\\\"}]}\"\n  ],\n  \"ParentId\": null,\n  \"Tooltip\": \"This is a Test\",\n  \"ContentType\": \"File\",\n  \"Priority\": 12,\n  \"Disabled\": false\n}"
+}
