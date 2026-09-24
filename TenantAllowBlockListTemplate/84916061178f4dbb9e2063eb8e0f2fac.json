@@ -1,0 +1,5 @@
+{
+  "PartitionKey": "TenantAllowBlockListTemplate",
+  "RowKey": "84916061-178f-4dbb-9e20-63eb8e0f2fac",
+  "JSON": "{\n  \"entries\": \"cipp.com.au\",\n  \"listMethod\": \"Allow\",\n  \"NoExpiration\": false,\n  \"listType\": \"Url\",\n  \"templateName\": \"test nameus\",\n  \"RemoveAfter\": false,\n  \"notes\": \"\"\n}"
+}
