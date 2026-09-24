@@ -1,0 +1,2581 @@
+{
+  "TemplateType": "BaselineTemplate",
+  "templateName": "Everything all at once v5.0",
+  "description": "",
+  "assignedTenants": [
+    {
+      "label": "Exported Template",
+      "value": "Exported Template",
+      "type": "Tenant"
+    }
+  ],
+  "excludedTenants": [],
+  "alertEmails": "",
+  "alertWebhookUrl": "",
+  "disableAlerts": false,
+  "stages": [
+    {
+      "name": "Default",
+      "logic": "and",
+      "conditions": [],
+      "standards": [
+        {
+          "standard": "ActivityBasedTimeout",
+          "instance": "ActivityBasedTimeout",
+          "variables": {
+            "timeout": "01:00:00"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AddDKIM",
+          "instance": "AddDKIM",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AddDMARCToMOERA",
+          "instance": "AddDMARCToMOERA",
+          "variables": {
+            "RecordValue": "v=DMARC1; p=reject;"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AdminSSPR",
+          "instance": "AdminSSPR",
+          "variables": {
+            "allowSSPR": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "allowOAuthTokens",
+          "instance": "allowOAuthTokens",
+          "variables": {
+            "state": "enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "allowOTPTokens",
+          "instance": "allowOTPTokens",
+          "variables": {
+            "isSoftwareOathEnabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AnonReportDisable",
+          "instance": "AnonReportDisable",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AntiPhishPolicy",
+          "instance": "AntiPhishPolicy",
+          "variables": {
+            "name": "CIPP Default Anti-Phishing Policy",
+            "PhishThresholdLevel": "3",
+            "EnableFirstContactSafetyTips": true,
+            "EnableSimilarUsersSafetyTips": true,
+            "EnableSimilarDomainsSafetyTips": true,
+            "EnableUnusualCharactersSafetyTips": true,
+            "AuthenticationFailAction": "MoveToJmf",
+            "SpoofQuarantineTag": "DefaultFullAccessPolicy",
+            "MailboxIntelligenceProtectionAction": "Quarantine",
+            "MailboxIntelligenceQuarantineTag": "DefaultFullAccessPolicy",
+            "TargetedUserProtectionAction": "Quarantine",
+            "TargetedUserQuarantineTag": "DefaultFullAccessPolicy",
+            "TargetedDomainProtectionAction": "Quarantine",
+            "TargetedDomainQuarantineTag": "DefaultFullAccessPolicy"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AntiSpamSafeList",
+          "instance": "AntiSpamSafeList",
+          "variables": {
+            "enableSafeList": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AppDeploy",
+          "instance": "AppDeploy",
+          "variables": {
+            "mode": "template",
+            "templateIds": [
+              {
+                "label": "Ashe CIPP Test Template",
+                "value": "8fc79ab0-d129-4131-a3b6-d2a224013fbe"
+              }
+            ],
+            "appids": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AppManagementPolicy",
+          "instance": "AppManagementPolicy",
+          "variables": {
+            "passwordCredentialsPasswordAddition": "disabled",
+            "passwordCredentialsCustomPasswordAddition": "disabled",
+            "passwordCredentialsMaxLifetime": "90",
+            "keyCredentialsMaxLifetime": "90"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AssignmentFilterTemplate",
+          "instance": "AssignmentFilterTemplate#2e081dca",
+          "variables": {
+            "assignmentFilterTemplate": "8d8e6789-b763-4f22-a8e8-c87fca0f3bb9"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AtpPolicyForO365",
+          "instance": "AtpPolicyForO365",
+          "variables": {
+            "AllowSafeDocsOpen": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AuditLog",
+          "instance": "AuditLog",
+          "variables": {
+            "enabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AuthenticationMethods",
+          "instance": "AuthenticationMethods",
+          "variables": {
+            "MicrosoftAuthenticatorEnabled": false,
+            "MicrosoftAuthenticatorGroup": "",
+            "FIDO2Enabled": true,
+            "FIDO2Group": "",
+            "TAPEnabled": true,
+            "TAPGroup": "",
+            "SoftwareOathEnabled": true,
+            "SoftwareOathGroup": "",
+            "HardwareOathEnabled": true,
+            "HardwareOathGroup": "",
+            "SMSEnabled": false,
+            "SMSGroup": "",
+            "VoiceEnabled": false,
+            "VoiceGroup": "",
+            "EmailEnabled": false,
+            "EmailGroup": "",
+            "x509CertificateEnabled": false,
+            "x509CertificateGroup": "",
+            "QRCodePinEnabled": false,
+            "QRCodePinGroup": "",
+            "EmailExcludeGroup": "",
+            "MicrosoftAuthenticatorSoftwareOath": false,
+            "TAPDefaultLifetime": "",
+            "TAPMinLifetime": "",
+            "TAPMaxLifetime": "",
+            "TAPDefaultLength": "",
+            "QRCodeLifetimeInDays": "",
+            "QRCodePinLength": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AuthMethodsPolicyMigration",
+          "instance": "AuthMethodsPolicyMigration",
+          "variables": {
+            "migrationState": "migrationComplete"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AuthMethodsSettings",
+          "instance": "AuthMethodsSettings",
+          "variables": {
+            "reportSuspiciousActivity": "enabled",
+            "systemCredential": "enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutoAddProxy",
+          "instance": "AutoAddProxy",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutoArchive",
+          "instance": "AutoArchive",
+          "variables": {
+            "threshold": 96
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutoArchiveMailbox",
+          "instance": "AutoArchiveMailbox",
+          "variables": {
+            "enabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutoExpandArchive",
+          "instance": "AutoExpandArchive",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutopilotProfile",
+          "instance": "AutopilotProfile#82edbbaa",
+          "variables": {
+            "DisplayName": "Profilefff",
+            "Description": "Prof",
+            "DeviceNameTemplate": "",
+            "CollectHash": true,
+            "AssignToAllDevices": true,
+            "SelfDeployingMode": true,
+            "HideTerms": true,
+            "HidePrivacy": true,
+            "HideChangeAccount": true,
+            "NotLocalAdmin": true,
+            "AllowWhiteGlove": true,
+            "AutoKeyboard": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "AutopilotStatusPage",
+          "instance": "AutopilotStatusPage",
+          "variables": {
+            "TimeOutInMinutes": 60,
+            "ErrorMessage": "hi im broken",
+            "ShowProgress": true,
+            "EnableLog": true,
+            "OBEEOnly": true,
+            "BlockDevice": true,
+            "InstallWindowsUpdates": false,
+            "AllowReset": false,
+            "AllowFail": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "BitLockerKeysForOwnedDevice",
+          "instance": "BitLockerKeysForOwnedDevice",
+          "variables": {
+            "allowed": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "Bookings",
+          "instance": "Bookings",
+          "variables": {
+            "enabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "Branding",
+          "instance": "Branding",
+          "variables": {
+            "signInPageText": "",
+            "usernameHintText": "",
+            "hideAccountResetCredentials": false,
+            "layoutTemplateType": "default",
+            "isHeaderShown": false,
+            "isFooterShown": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "calDefault",
+          "instance": "calDefault",
+          "variables": {
+            "permissionLevel": "PublishingAuthor"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "CloudMessageRecall",
+          "instance": "CloudMessageRecall",
+          "variables": {
+            "enabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "CollaborationDomainRestriction",
+          "instance": "CollaborationDomainRestriction",
+          "variables": {
+            "allowedDomains": "google.com, google2.com"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ColleagueImpersonationAlert",
+          "instance": "ColleagueImpersonationAlert",
+          "variables": {
+            "disclaimerHtml": "<br>no</>",
+            "displayNameSeparator": "|",
+            "excludedMailboxes": [
+              {
+                "label": "bla",
+                "value": "bla"
+              }
+            ]
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ConditionalAccessTemplate",
+          "instance": "ConditionalAccessTemplate#91c81346",
+          "variables": {
+            "caTemplate": "5088cff4-0904-4b25-b6bc-5aa3fdc920df",
+            "state": "enabledForReportingButNotEnforced",
+            "disableSD": true,
+            "createGroups": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "CopilotLimitedMode",
+          "instance": "CopilotLimitedMode",
+          "variables": {
+            "LimitedModeEnabled": false,
+            "GroupName": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "CopilotSettings",
+          "instance": "CopilotSettings",
+          "variables": {
+            "copilotChatPinning": "1",
+            "blockAccessToOpenFiles": "0",
+            "imageGeneration": "",
+            "allowWebSearch": "0",
+            "allowInAdminCenters": "0"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "CustomBannedPasswordList",
+          "instance": "CustomBannedPasswordList",
+          "variables": {
+            "BannedWords": "7n7n"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefaultPlatformRestrictions",
+          "instance": "DefaultPlatformRestrictions",
+          "variables": {
+            "platformAndroidForWorkBlocked": false,
+            "personalAndroidForWorkBlocked": false,
+            "platformAndroidBlocked": false,
+            "personalAndroidBlocked": false,
+            "platformiOSBlocked": false,
+            "personaliOSBlocked": false,
+            "platformMacOSBlocked": false,
+            "personalMacOSBlocked": false,
+            "platformWindowsBlocked": false,
+            "personalWindowsBlocked": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefaultSharingLink",
+          "instance": "DefaultSharingLink",
+          "variables": {
+            "sharingLinkType": 2
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefenderASRPolicy",
+          "instance": "DefenderASRPolicy",
+          "variables": {
+            "BlockObfuscatedScripts": true,
+            "BlockAdobeChild": true,
+            "BlockWin32Macro": true,
+            "BlockCredentialStealing": true,
+            "BlockPSExec": true,
+            "WMIPersistence": true,
+            "BlockSystemTools": true,
+            "BlockOfficeExes": true,
+            "BlockOfficeApps": true,
+            "BlockSafeMode": false,
+            "BlockYoungExe": true,
+            "blockJSVB": true,
+            "BlockWebshellForServers": true,
+            "blockOfficeComChild": true,
+            "blockOfficeChild": true,
+            "BlockUntrustedUSB": true,
+            "EnableRansomwareVac": true,
+            "BlockExesMail": true,
+            "BlockUnsignedDrivers": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefenderAVPolicy",
+          "instance": "DefenderAVPolicy",
+          "variables": {
+            "ScanArchives": true,
+            "AllowBehavior": true,
+            "AllowCloudProtection": true,
+            "AllowEmailScanning": false,
+            "AllowFullScanNetwork": false,
+            "AllowFullScanRemovable": true,
+            "AllowScriptScan": true,
+            "AllowDownloadable": true,
+            "AllowRealTime": true,
+            "AllowNetwork": false,
+            "AllowUI": true,
+            "CheckSigs": false,
+            "DisableCatchupFullScan": true,
+            "DisableCatchupQuickScan": true,
+            "LowCPU": true,
+            "MeteredConnectionUpdates": false,
+            "DisableLocalAdminMerge": true,
+            "AvgCPULoadFactor": "",
+            "SignatureUpdateInterval": "",
+            "CloudExtendedTimeout": "",
+            "EnableNetworkProtection": "0",
+            "AllowOnAccessProtection": "1",
+            "SubmitSamplesConsent": "1"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefenderCompliancePolicy",
+          "instance": "DefenderCompliancePolicy",
+          "variables": {
+            "ConnectAndroid": false,
+            "ConnectAndroidCompliance": false,
+            "androidDeviceBlockedOnMissingPartnerData": false,
+            "grantMobileThreatDefensePartnerRole": false,
+            "ConnectIos": false,
+            "ConnectIosCompliance": false,
+            "appSync": false,
+            "allowPartnerToCollectIosPersonalApplicationMetadata": false,
+            "iosDeviceBlockedOnMissingPartnerData": false,
+            "allowPartnerToCollectIosCertificateMetadata": false,
+            "allowPartnerToCollectIosPersonalCertificateMetadata": false,
+            "ConnectMac": false,
+            "macDeviceBlockedOnMissingPartnerData": false,
+            "ConnectWindows": false,
+            "windowsMobileApplicationManagementEnabled": false,
+            "windowsDeviceBlockedOnMissingPartnerData": false,
+            "BlockunsupportedOS": false,
+            "AllowMEMEnforceCompliance": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefenderEDRPolicy",
+          "instance": "DefenderEDRPolicy",
+          "variables": {
+            "Config": true,
+            "SampleSharing": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DefenderExclusionPolicy",
+          "instance": "DefenderExclusionPolicy",
+          "variables": {
+            "excludedExtensions": "",
+            "excludedPaths": "",
+            "excludedProcesses": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DelegateSentItems",
+          "instance": "DelegateSentItems",
+          "variables": {
+            "IncludeUserMailboxes": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DeletedUserRentention",
+          "instance": "DeletedUserRentention",
+          "variables": {
+            "days": 30
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DeployCheckChromeExtension",
+          "instance": "DeployCheckChromeExtension",
+          "variables": {
+            "showNotifications": true,
+            "enableValidPageBadge": false,
+            "enablePageBlocking": true,
+            "forceToolbarPin": false,
+            "enableCippReporting": true,
+            "customRulesUrl": "",
+            "updateInterval": "",
+            "enableDebugLogging": false,
+            "enableGenericWebhook": false,
+            "webhookUrl": "",
+            "domainSquattingEnabled": true,
+            "companyName": "",
+            "productName": "",
+            "supportEmail": "",
+            "supportUrl": "",
+            "privacyPolicyUrl": "",
+            "aboutUrl": "",
+            "primaryColor": "",
+            "logoUrl": "",
+            "customGroup": "",
+            "excludeGroup": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DeployContactTemplates",
+          "instance": "DeployContactTemplates#9262c5f3",
+          "variables": {
+            "contactTemplate": "3bfa8258-e114-472c-ae47-0fc58b09671f"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DeployMailContact",
+          "instance": "DeployMailContact",
+          "variables": {
+            "ExternalEmailAddress": "kelvin@cyberdrai2n.com",
+            "DisplayName": "kelvin",
+            "FirstName": "kelvin",
+            "LastName": "kelvin"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DetectConditionalAccessDrift",
+          "instance": "DetectConditionalAccessDrift",
+          "variables": {},
+          "remediateEnabled": false,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DetectIntuneDrift",
+          "instance": "DetectIntuneDrift",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DevicePrepProfile",
+          "instance": "DevicePrepProfile#d5213e31",
+          "variables": {
+            "ProfileName": "profileeeeee",
+            "ProfileDescription": "",
+            "DeploymentType": "0",
+            "JoinType": "0",
+            "AccountType": "0",
+            "Timeout": "",
+            "CustomErrorMessage": "",
+            "AllowSkip": true,
+            "AllowDiagnostics": true,
+            "DeviceGroupName": "",
+            "CreateNewGroup": true,
+            "AssignTo": "none"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableAdditionalStorageProviders",
+          "instance": "DisableAdditionalStorageProviders",
+          "variables": {
+            "storageProvidersAvailable": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableAddShortcutsToOneDrive",
+          "instance": "DisableAddShortcutsToOneDrive",
+          "variables": {
+            "disableAddToOneDrive": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableAppCreation",
+          "instance": "DisableAppCreation",
+          "variables": {
+            "allowAppCreation": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableBasicAuthSMTP",
+          "instance": "DisableBasicAuthSMTP",
+          "variables": {
+            "disabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableEmail",
+          "instance": "DisableEmail",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableEWS",
+          "instance": "DisableEWS",
+          "variables": {
+            "ewsEnabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableExchangeOnlinePowerShell",
+          "instance": "DisableExchangeOnlinePowerShell",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableExternalCalendarSharing",
+          "instance": "DisableExternalCalendarSharing",
+          "variables": {
+            "externalCalendarSharingEnabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableGuestDirectory",
+          "instance": "DisableGuestDirectory",
+          "variables": {
+            "guestUserRoleId": "2af84b1e-32c8-42b7-82bc-daa82404023b"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableGuests",
+          "instance": "DisableGuests",
+          "variables": {
+            "days": 90
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableInactiveUsers",
+          "instance": "DisableInactiveUsers",
+          "variables": {
+            "days": 180,
+            "excludedUsers": [
+              "supersecretbreakglassaccount@7ngn50.onmicrosoft.com"
+            ]
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableM365GroupUsers",
+          "instance": "DisableM365GroupUsers",
+          "variables": {
+            "AllowedGroupName": "",
+            "CreateGroup": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "disableMacSync",
+          "instance": "disableMacSync",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableOutlookAddins",
+          "instance": "DisableOutlookAddins",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableQRCodePin",
+          "instance": "DisableQRCodePin",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableReshare",
+          "instance": "DisableReshare",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableResourceMailbox",
+          "instance": "DisableResourceMailbox",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableSecurityGroupUsers",
+          "instance": "DisableSecurityGroupUsers",
+          "variables": {
+            "allowSecurityGroupCreation": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableSelfServiceLicenses",
+          "instance": "DisableSelfServiceLicenses",
+          "variables": {
+            "Exclusions": "",
+            "DisableTrials": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableSharedMailbox",
+          "instance": "DisableSharedMailbox",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableSharePointLegacyAuth",
+          "instance": "DisableSharePointLegacyAuth",
+          "variables": {
+            "legacyAuthEnabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableSMS",
+          "instance": "DisableSMS",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableTenantCreation",
+          "instance": "DisableTenantCreation",
+          "variables": {
+            "allowTenantCreation": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableTNEF",
+          "instance": "DisableTNEF",
+          "variables": {
+            "tnefEnabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableUserSiteCreate",
+          "instance": "DisableUserSiteCreate",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableViva",
+          "instance": "DisableViva",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DisableVoice",
+          "instance": "DisableVoice",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "Disablex509Certificate",
+          "instance": "Disablex509Certificate",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DlpCompliancePolicyTemplate",
+          "instance": "DlpCompliancePolicyTemplate#7fd4b4e3",
+          "variables": {
+            "dlpCompliancePolicyTemplate": "20941cf8-b3e6-478c-9573-d33d90831edf"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "DlpViaDcsEnabled",
+          "instance": "DlpViaDcsEnabled",
+          "variables": {
+            "dlpViaDcsEnabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EmailAsAlternateLoginId",
+          "instance": "EmailAsAlternateLoginId",
+          "variables": {
+            "Enabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EmptyFilterIPAllowList",
+          "instance": "EmptyFilterIPAllowList",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableAppConsentRequests",
+          "instance": "EnableAppConsentRequests",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableCustomerLockbox",
+          "instance": "EnableCustomerLockbox",
+          "variables": {
+            "enabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableExchangeCloudManagement",
+          "instance": "EnableExchangeCloudManagement",
+          "variables": {
+            "state": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableFIDO2",
+          "instance": "EnableFIDO2",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableHardwareOAuth",
+          "instance": "EnableHardwareOAuth",
+          "variables": {
+            "state": "enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableLitigationHold",
+          "instance": "EnableLitigationHold",
+          "variables": {
+            "days": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableMailboxAuditing",
+          "instance": "EnableMailboxAuditing",
+          "variables": {
+            "auditDisabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableMailTips",
+          "instance": "EnableMailTips",
+          "variables": {
+            "mailTipsEnabled": true,
+            "largeAudienceThreshold": 25
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableNamePronunciation",
+          "instance": "EnableNamePronunciation",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnableOnlineArchiving",
+          "instance": "EnableOnlineArchiving",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnablePronouns",
+          "instance": "EnablePronouns",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnforcePrivateGroups",
+          "instance": "EnforcePrivateGroups",
+          "variables": {
+            "ExcludedGroupNames": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EnrollmentWindowsHelloForBusinessConfiguration",
+          "instance": "EnrollmentWindowsHelloForBusinessConfiguration",
+          "variables": {
+            "state": "enabled",
+            "pinMinimumLength": 6,
+            "pinMaximumLength": 127,
+            "pinUppercaseCharactersUsage": "disallowed",
+            "pinLowercaseCharactersUsage": "disallowed",
+            "pinSpecialCharactersUsage": "disallowed",
+            "securityDeviceRequired": true,
+            "unlockWithBiometricsEnabled": true,
+            "remotePassportEnabled": true,
+            "pinPreviousBlockCount": 0,
+            "pinExpirationInDays": 0,
+            "enhancedBiometricsState": "notConfigured",
+            "enhancedSignInSecurity": "",
+            "securityKeyForSignIn": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ExcludedfileExt",
+          "instance": "ExcludedfileExt",
+          "variables": {
+            "ext": "exe,bat"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EXODirectSend",
+          "instance": "EXODirectSend",
+          "variables": {
+            "rejectDirectSend": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EXODisableAutoForwarding",
+          "instance": "EXODisableAutoForwarding",
+          "variables": {
+            "autoForwardingMode": "Off"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "EXOOutboundSpamLimits",
+          "instance": "EXOOutboundSpamLimits",
+          "variables": {
+            "recipientLimitExternalPerHour": "30",
+            "recipientLimitInternalPerHour": "5",
+            "recipientLimitPerDay": "40",
+            "actionWhenThresholdReached": "BlockUser"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ExternalMFATrusted",
+          "instance": "ExternalMFATrusted",
+          "variables": {
+            "state": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "FIDO2PasskeyProfiles",
+          "instance": "FIDO2PasskeyProfiles",
+          "variables": {
+            "PasskeyTypes": "deviceBound,synced",
+            "AttestationEnforcement": "disabled",
+            "EnforceKeyRestrictions": false,
+            "EnforcementType": "allow",
+            "AAGUIDs": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "FocusedInbox",
+          "instance": "FocusedInbox",
+          "variables": {
+            "enabled": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "FormsPhishingProtection",
+          "instance": "FormsPhishingProtection",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "GlobalQuarantineNotifications",
+          "instance": "GlobalQuarantineNotifications",
+          "variables": {
+            "NotificationInterval": "1.00:00:00"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "GlobalQuarantineSettings",
+          "instance": "GlobalQuarantineSettings",
+          "variables": {
+            "SenderName": "bla",
+            "CustomSubject": "bla",
+            "CustomDisclaimer": "bla",
+            "FromAddress": "quarantine@7ngn50.onmicrosoft.com",
+            "OrganizationBrandingEnabled": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "GroupTemplate",
+          "instance": "GroupTemplate#959e6e2b",
+          "variables": {
+            "groupTemplate": "77c1ed37-10d0-4ef1-93dc-198e70abb166"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "GuestInvite",
+          "instance": "GuestInvite",
+          "variables": {
+            "allowInvitesFrom": "adminsAndGuestInviters"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneAppTemplateDeploy",
+          "instance": "IntuneAppTemplateDeploy",
+          "variables": {
+            "templateIds": [
+              {
+                "label": "eb5cca5c-d968-4783-8e39-f552b3452ce1",
+                "value": "eb5cca5c-d968-4783-8e39-f552b3452ce1"
+              }
+            ]
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneBrandingProfile",
+          "instance": "intuneBrandingProfile",
+          "variables": {
+            "displayName": "",
+            "showLogo": "",
+            "showDisplayNameNextToLogo": "",
+            "contactITName": "",
+            "contactITPhoneNumber": "",
+            "contactITEmailAddress": "",
+            "contactITNotes": "",
+            "onlineSupportSiteName": "",
+            "onlineSupportSiteUrl": "",
+            "privacyUrl": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneComplianceSettings",
+          "instance": "IntuneComplianceSettings",
+          "variables": {
+            "secureByDefault": true,
+            "deviceComplianceCheckinThresholdDays": 120
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneDeviceReg",
+          "instance": "intuneDeviceReg",
+          "variables": {
+            "max": 50
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneDeviceRegLocalAdmins",
+          "instance": "intuneDeviceRegLocalAdmins",
+          "variables": {
+            "registeringUsers": "#microsoft.graph.noDeviceRegistrationMembership",
+            "enableGlobalAdmins": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneDeviceRetirementDays",
+          "instance": "intuneDeviceRetirementDays",
+          "variables": {
+            "days": "40"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneRequireMFA",
+          "instance": "intuneRequireMFA",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneRestrictUserDeviceJoin",
+          "instance": "intuneRestrictUserDeviceJoin",
+          "variables": {
+            "allowedToJoin": "#microsoft.graph.noDeviceRegistrationMembership"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "intuneRestrictUserDeviceRegistration",
+          "instance": "intuneRestrictUserDeviceRegistration",
+          "variables": {
+            "allowedToRegister": "#microsoft.graph.noDeviceRegistrationMembership"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#9265b91c",
+          "variables": {
+            "intuneTemplate": "f26991ab-24d9-440a-a69a-42b6cd39320c",
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-04e77498",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "04e77498-4bb1-4f0b-9726-8ab3352d056e"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-212e1653",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "212e1653-551f-4592-903c-7dd32b2edd8c"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-257ebf97",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "257ebf97-40cd-4861-a7a0-f19ada1e2316"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-5e0c779e",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "5e0c779e-21cf-459a-ae17-8bafa9982620"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-6c9e2009",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "6c9e2009-f72e-4aba-9393-ed58b328a201"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-92d4d6e0",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "92d4d6e0-b818-4c52-bffa-5921a6e30921"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-9fcfd67e",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "9fcfd67e-9f82-4a97-9364-50528bdeee88"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-c39e5044",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "c39e5044-929b-49ea-818f-d6585810aa2f"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneTemplate",
+          "instance": "IntuneTemplate#pe9b90599-f59b1553",
+          "variables": {
+            "assignTo": "On",
+            "customGroup": "",
+            "excludeGroup": "",
+            "assignmentFilter": "",
+            "assignmentFilterType": "include",
+            "verifyAssignments": false,
+            "levenshteinDistance": 0,
+            "intuneTemplate": "f59b1553-9e7a-431d-9334-ab2c330e6215"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "IntuneWindowsDiagnostic",
+          "instance": "IntuneWindowsDiagnostic",
+          "variables": {
+            "areDataProcessorServiceForWindowsFeaturesEnabled": false,
+            "hasValidWindowsLicense": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "laps",
+          "instance": "laps",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "LegacyEmailReportAddins",
+          "instance": "LegacyEmailReportAddins",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MailboxRecipientLimits",
+          "instance": "MailboxRecipientLimits",
+          "variables": {
+            "RecipientLimit": 500
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MailContacts",
+          "instance": "MailContacts",
+          "variables": {
+            "GeneralContact": "bla@bla.com",
+            "SecurityContact": "bla@bla.com",
+            "MarketingContact": "bla@bla.com",
+            "TechContact": "bla@bla.com"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MalwareFilterPolicy",
+          "instance": "MalwareFilterPolicy",
+          "variables": {
+            "name": "CIPP Default Malware Policy",
+            "FileTypeAction": "Quarantine",
+            "QuarantineTag": "AdminOnlyAccessPolicy",
+            "OptionalFileTypes": "",
+            "EnableInternalSenderAdminNotifications": false,
+            "InternalSenderAdminAddress": "",
+            "EnableExternalSenderAdminNotifications": true,
+            "ExternalSenderAdminAddress": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ManualTask",
+          "instance": "ManualTask#0c6df785",
+          "variables": {
+            "taskName": "Complete me",
+            "instructions": "",
+            "documentationUrl": "",
+            "recurrence": "monthly"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MDMEnrollmentDuringRegistration",
+          "instance": "MDMEnrollmentDuringRegistration",
+          "variables": {
+            "disableEnrollment": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MDMScope",
+          "instance": "MDMScope",
+          "variables": {
+            "appliesTo": "all",
+            "customGroup": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "MessageExpiration",
+          "instance": "MessageExpiration",
+          "variables": {
+            "messageExpiration": "12:00:00"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "NudgeMFA",
+          "instance": "NudgeMFA",
+          "variables": {
+            "state": "disabled",
+            "snoozeDurationInDays": "4",
+            "enforceRegistrationAfterAllowedSnoozes": true,
+            "targetedAuthenticationMethod": "microsoftAuthenticator",
+            "includeTargets": "",
+            "excludeTargets": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "OauthConsent",
+          "instance": "OauthConsent",
+          "variables": {
+            "AllowedApps": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "OMEBranding",
+          "instance": "OMEBranding",
+          "variables": {
+            "BackgroundColor": "#dddddd",
+            "LogoUrl": "",
+            "IntroductionText": "",
+            "ReadButtonText": "",
+            "EmailText": "",
+            "PrivacyStatementUrl": "",
+            "DisclaimerText": "ddddddd",
+            "PortalText": "",
+            "OTPEnabled": true,
+            "SocialIdSignIn": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "OutBoundSpamAlert",
+          "instance": "OutBoundSpamAlert",
+          "variables": {
+            "NotifyOutboundSpam": true,
+            "OutboundSpamContact": "angelo@cyberdrain.com"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "OWAAttachmentRestrictions",
+          "instance": "OWAAttachmentRestrictions",
+          "variables": {
+            "ConditionalAccessPolicy": "ReadOnlyPlusAttachmentsBlocked"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PasswordExpireDisabled",
+          "instance": "PasswordExpireDisabled",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PerUserMFA",
+          "instance": "PerUserMFA",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PhishingSimulations",
+          "instance": "PhishingSimulations",
+          "variables": {
+            "Domains": [
+              {
+                "label": "google.com",
+                "value": "google.com"
+              }
+            ],
+            "SenderIpRanges": [
+              {
+                "label": "10.0.0.10/24",
+                "value": "10.0.0.10/24"
+              }
+            ],
+            "RemoveExtraUrls": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PhishProtection",
+          "instance": "PhishProtection",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PhishSimSpoofIntelligence",
+          "instance": "PhishSimSpoofIntelligence",
+          "variables": {
+            "AllowedDomains": [
+              {
+                "label": "google.com",
+                "value": "google.com"
+              }
+            ],
+            "RemoveExtraDomains": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ProfilePhotos",
+          "instance": "ProfilePhotos",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PWcompanionAppAllowedState",
+          "instance": "PWcompanionAppAllowedState",
+          "variables": {
+            "state": "enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "PWdisplayAppInformationRequiredState",
+          "instance": "PWdisplayAppInformationRequiredState",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "QuarantineRequestAlert",
+          "instance": "QuarantineRequestAlert",
+          "variables": {
+            "NotifyUser": "bla@bla.com",
+            "AllowExtraAddresses": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "QuarantineTemplate",
+          "instance": "QuarantineTemplate#639d10d3",
+          "variables": {
+            "displayName": "blabla",
+            "ESNEnabled": true,
+            "ReleaseAction": "PermissionToRequestRelease",
+            "IncludeMessagesFromBlockedSenderAddress": false,
+            "PermissionToDelete": false,
+            "PermissionToPreview": false,
+            "PermissionToBlockSender": false,
+            "PermissionToAllowSender": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "RestrictThirdPartyStorageServices",
+          "instance": "RestrictThirdPartyStorageServices",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "RetentionPolicyTag",
+          "instance": "RetentionPolicyTag",
+          "variables": {
+            "AgeLimitForRetention": "90"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ReusableSettingsTemplate",
+          "instance": "ReusableSettingsTemplate#24afa130",
+          "variables": {
+            "reusableSettingsTemplate": "2b4bedc2-03bf-405f-927e-fb1d593c7e78"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "RotateDKIM",
+          "instance": "RotateDKIM",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SafeAttachmentPolicy",
+          "instance": "SafeAttachmentPolicy",
+          "variables": {
+            "name": "CIPP Default Safe Attachment Policy",
+            "SafeAttachmentAction": "Block",
+            "QuarantineTag": "AdminOnlyAccessPolicy",
+            "Redirect": false,
+            "RedirectAddress": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SafeLinksPolicy",
+          "instance": "SafeLinksPolicy",
+          "variables": {
+            "name": "CIPP Default SafeLinks Policy",
+            "AllowClickThrough": false,
+            "DisableUrlRewrite": false,
+            "EnableOrganizationBranding": false,
+            "DoNotRewriteUrls": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SafeLinksTemplatePolicy",
+          "instance": "SafeLinksTemplatePolicy#f5b0bde1",
+          "variables": {
+            "safeLinksTemplate": "4176f126-6f28-486f-8bc9-ca0c6aa712e9"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SafeSendersDisable",
+          "instance": "SafeSendersDisable",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SecureScoreRemediation",
+          "instance": "SecureScoreRemediation",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SecurityDefaults",
+          "instance": "SecurityDefaults",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SendFromAlias",
+          "instance": "SendFromAlias",
+          "variables": {
+            "state": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SendReceiveLimitTenant",
+          "instance": "SendReceiveLimitTenant",
+          "variables": {
+            "SendLimit": 35,
+            "ReceiveLimit": 36
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SensitiveInfoTypeTemplate",
+          "instance": "SensitiveInfoTypeTemplate#f2a9350c",
+          "variables": {
+            "sensitiveInfoTypeTemplate": "b5443d62-0771-4f02-aa35-6bd194f32839"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SensitivityLabelTemplate",
+          "instance": "SensitivityLabelTemplate#2b905796",
+          "variables": {
+            "sensitivityLabelTemplate": "8f721d4d-4ae8-4875-8844-0d405745cc3b"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SharePointMassDeletionAlert",
+          "instance": "SharePointMassDeletionAlert",
+          "variables": {
+            "Threshold": "100",
+            "TimeWindow": "60",
+            "NotifyUser": [
+              "bla@bla.com"
+            ]
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "sharingCapability",
+          "instance": "sharingCapability",
+          "variables": {
+            "sharingCapability": 1
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "sharingDomainRestriction",
+          "instance": "sharingDomainRestriction",
+          "variables": {
+            "Mode": "allowList",
+            "Domains": "google.com"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "ShortenMeetings",
+          "instance": "ShortenMeetings",
+          "variables": {
+            "ShortenEventScopeDefault": "EndEarly",
+            "DefaultMinutesToReduceShortEventsBy": 5,
+            "DefaultMinutesToReduceLongEventsBy": 10
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SmartLockout",
+          "instance": "SmartLockout",
+          "variables": {
+            "LockoutDurationInSeconds": 60,
+            "LockoutThreshold": 10,
+            "EnableBannedPasswordCheckOnPremises": false,
+            "BannedPasswordCheckOnPremisesMode": "Audit"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SpamFilterPolicy",
+          "instance": "SpamFilterPolicy",
+          "variables": {
+            "name": "CIPP Default Spam Filter Policy",
+            "SpamAction": "MoveToJmf",
+            "SpamQuarantineTag": "DefaultFullAccessPolicy",
+            "HighConfidenceSpamAction": "Quarantine",
+            "HighConfidenceSpamQuarantineTag": "AdminOnlyAccessPolicy",
+            "BulkSpamAction": "MoveToJmf",
+            "BulkQuarantineTag": "DefaultFullAccessPolicy",
+            "PhishSpamAction": "Quarantine",
+            "PhishQuarantineTag": "AdminOnlyAccessPolicy",
+            "HighConfidencePhishQuarantineTag": "AdminOnlyAccessPolicy",
+            "BulkThreshold": 7,
+            "IncreaseScoreWithImageLinks": false,
+            "IncreaseScoreWithBizOrInfoUrls": false,
+            "MarkAsSpamFramesInHtml": false,
+            "MarkAsSpamObjectTagsInHtml": false,
+            "MarkAsSpamEmbedTagsInHtml": false,
+            "MarkAsSpamFormTagsInHtml": false,
+            "MarkAsSpamWebBugsInHtml": false,
+            "MarkAsSpamSensitiveWordList": false,
+            "EnableLanguageBlockList": false,
+            "LanguageBlockList": "",
+            "EnableRegionBlockList": false,
+            "RegionBlockList": "",
+            "AllowedSenderDomains": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPAzureB2B",
+          "instance": "SPAzureB2B",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPDirectSharing",
+          "instance": "SPDirectSharing",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPDisableCustomScripts",
+          "instance": "SPDisableCustomScripts",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPDisableLegacyWorkflows",
+          "instance": "SPDisableLegacyWorkflows",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPDisableStoreAccess",
+          "instance": "SPDisableStoreAccess",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPDisallowInfectedFiles",
+          "instance": "SPDisallowInfectedFiles",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPEmailAttestation",
+          "instance": "SPEmailAttestation",
+          "variables": {
+            "days": 15
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPExternalUserExpiration",
+          "instance": "SPExternalUserExpiration",
+          "variables": {
+            "days": 60
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPFileRequests",
+          "instance": "SPFileRequests",
+          "variables": {
+            "state": false,
+            "expirationDays": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SpoofWarn",
+          "instance": "SpoofWarn",
+          "variables": {
+            "externalWarningEnabled": true,
+            "allowListAdd": []
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPOVersionControl",
+          "instance": "SPOVersionControl",
+          "variables": {
+            "EnableAutoTrim": true,
+            "MajorVersionLimit": "",
+            "ExpireVersionsAfterDays": "",
+            "ApplyToExistingSites": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "SPSyncButtonState",
+          "instance": "SPSyncButtonState",
+          "variables": {
+            "hideSyncButton": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "StaleEntraDevices",
+          "instance": "StaleEntraDevices",
+          "variables": {
+            "deviceAgeThreshold": 90,
+            "deviceDeleteThreshold": 0
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TAP",
+          "instance": "TAP",
+          "variables": {
+            "isUsableOnce": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsChatProtection",
+          "instance": "TeamsChatProtection",
+          "variables": {
+            "FileTypeCheck": "Enabled",
+            "UrlReputationCheck": "Enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsDisableResourceAccounts",
+          "instance": "TeamsDisableResourceAccounts",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsEmailIntegration",
+          "instance": "TeamsEmailIntegration",
+          "variables": {
+            "AllowEmailIntoChannel": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsEnrollUser",
+          "instance": "TeamsEnrollUser",
+          "variables": {
+            "EnrollUserOverride": "Enabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsExternalAccessPolicy",
+          "instance": "TeamsExternalAccessPolicy",
+          "variables": {
+            "EnableFederationAccess": false,
+            "EnableTeamsConsumerAccess": false,
+            "EnableTeamsConsumerInbound": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsExternalChatWithAnyone",
+          "instance": "TeamsExternalChatWithAnyone",
+          "variables": {
+            "UseB2BInvitesToAddExternalUsers": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsExternalFileSharing",
+          "instance": "TeamsExternalFileSharing",
+          "variables": {
+            "AllowGoogleDrive": false,
+            "AllowShareFile": false,
+            "AllowBox": false,
+            "AllowDropBox": false,
+            "AllowEgnyte": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsFederationConfiguration",
+          "instance": "TeamsFederationConfiguration",
+          "variables": {
+            "DomainControl": "AllowSpecificExternal",
+            "DomainList": "googe.com",
+            "AllowTeamsConsumer": false,
+            "AllowTeamsConsumerInbound": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsGlobalMeetingPolicy",
+          "instance": "TeamsGlobalMeetingPolicy",
+          "variables": {
+            "DesignatedPresenterRoleMode": "OrganizerOnlyUserOverride",
+            "AllowAnonymousUsersToJoinMeeting": false,
+            "AllowAnonymousUsersToStartMeeting": false,
+            "AutoAdmittedUsers": "EveryoneInCompanyExcludingGuests",
+            "AllowPSTNUsersToBypassLobby": false,
+            "MeetingChatEnabledType": "EnabledExceptAnonymous",
+            "AllowParticipantGiveRequestControl": false,
+            "AllowExternalParticipantGiveRequestControl": false
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsGuestAccess",
+          "instance": "TeamsGuestAccess",
+          "variables": {
+            "AllowGuestUser": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsMeetingRecordingExpiration",
+          "instance": "TeamsMeetingRecordingExpiration",
+          "variables": {
+            "ExpirationDays": 120
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsMeetingsByDefault",
+          "instance": "TeamsMeetingsByDefault",
+          "variables": {
+            "state": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsMeetingVerification",
+          "instance": "TeamsMeetingVerification",
+          "variables": {
+            "CaptchaVerificationForMeetingJoin": "AnonymousUsersAndUntrustedOrganizations"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsMessagingPolicy",
+          "instance": "TeamsMessagingPolicy",
+          "variables": {
+            "AllowOwnerDeleteMessage": false,
+            "AllowUserDeleteMessage": true,
+            "AllowUserEditMessage": true,
+            "AllowUserDeleteChat": true,
+            "ReadReceiptsEnabledType": "UserPreference",
+            "CreateCustomEmojis": true,
+            "DeleteCustomEmojis": false,
+            "AllowSecurityEndUserReporting": true,
+            "AllowCommunicationComplianceEndUserReporting": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsZAP",
+          "instance": "TeamsZAP",
+          "variables": {},
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TenantAllowBlockListTemplate",
+          "instance": "TenantAllowBlockListTemplate#81ccfa51",
+          "variables": {
+            "tenantAllowBlockListTemplate": "84916061-178f-4dbb-9e20-63eb8e0f2fac"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TenantDefaultTimezone",
+          "instance": "TenantDefaultTimezone",
+          "variables": {
+            "Timezone": "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TransportRuleTemplate",
+          "instance": "TransportRuleTemplate#57ba41f0",
+          "variables": {
+            "transportRuleTemplate": "adf9f6d1-36fb-438b-a82b-71f3af402b6c.TransportRuleTemplate.json",
+            "overwrite": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TwoClickEmailProtection",
+          "instance": "TwoClickEmailProtection",
+          "variables": {
+            "state": true
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "unmanagedSync",
+          "instance": "unmanagedSync",
+          "variables": {
+            "conditionalAccessPolicy": 2
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "UserPreferredLanguage",
+          "instance": "UserPreferredLanguage",
+          "variables": {
+            "preferredLanguage": "en-US"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "UserSubmissions",
+          "instance": "UserSubmissions",
+          "variables": {
+            "state": "enable",
+            "email": ""
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "WindowsBackupRestore",
+          "instance": "WindowsBackupRestore",
+          "variables": {
+            "state": "disabled"
+          },
+          "remediateEnabled": true,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        }
+      ]
+    }
+  ],
+  "referencedTemplates": [
+    {
+      "partition": "AssignmentFilterTemplate",
+      "guid": "8d8e6789-b763-4f22-a8e8-c87fca0f3bb9",
+      "displayName": "CIPP: Managed Devices",
+      "path": "AssignmentFilterTemplate/CIPP_Managed_Devices.json"
+    },
+    {
+      "partition": "CATemplate",
+      "guid": "5088cff4-0904-4b25-b6bc-5aa3fdc920df",
+      "displayName": "CA005-Global-DataProtection-Office365-AnyPlatform-Unmanaged-AppEnforcedRestrictions-BlockDownload",
+      "path": "CATemplate/CA005GlobalDataProtectionOffice365AnyPlatformUnmanagedAppEnforcedRestrictionsBlockDownload.json"
+    },
+    {
+      "partition": "ContactTemplate",
+      "guid": "3bfa8258-e114-472c-ae47-0fc58b09671f",
+      "displayName": "test",
+      "path": "ContactTemplate/test.json"
+    },
+    {
+      "partition": "DlpCompliancePolicyTemplate",
+      "guid": "20941cf8-b3e6-478c-9573-d33d90831edf",
+      "displayName": "U.K. Financial Data",
+      "path": "DlpCompliancePolicyTemplate/UK_Financial_Data.json"
+    },
+    {
+      "partition": "GroupTemplate",
+      "guid": "77c1ed37-10d0-4ef1-93dc-198e70abb166",
+      "displayName": "CA-ServiceAccounts",
+      "path": "GroupTemplate/CAServiceAccounts.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "f26991ab-24d9-440a-a69a-42b6cd39320c",
+      "displayName": "App Protection - Android Enterprise Core Data Protection - BL- U",
+      "path": "IntuneTemplate/App_Protection__Android_Enterprise_Core_Data_Protection__BL_U.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "04e77498-4bb1-4f0b-9726-8ab3352d056e",
+      "displayName": "CISv4 - WIN - BL - 'Choose drive encryption method and cipher  strength  for operating system drives",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_drive_encryption_method_and_cipher__strength__for_operating_system_drives.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "212e1653-551f-4592-903c-7dd32b2edd8c",
+      "displayName": "CISv4 - WIN - BL - Allow Warning For Other Disk Encryption: Allow  Standard User Encryption",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Allow_Warning_For_Other_Disk_Encryption_Allow__Standard_User_Encryption.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "257ebf97-40cd-4861-a7a0-f19ada1e2316",
+      "displayName": "CISv4 - WIN - BL - 'Choose how BitLocker-protected fixed  drives can be recovered: Allow data recovery agent",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_how_BitLockerprotected_fixed__drives_can_be_recovered_Allow_data_recovery_agent.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "5e0c779e-21cf-459a-ae17-8bafa9982620",
+      "displayName": "CISv4 - WIN - BL - Choose how BitLocker-protected  operating system drives can be recovered: Recovery Key",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_how_BitLockerprotected__operating_system_drives_can_be_recovered_Recovery_Key.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "6c9e2009-f72e-4aba-9393-ed58b328a201",
+      "displayName": "CISv4 - WIN - BL - Choose drive encryption method and cipher  strength  for removable data drives",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_drive_encryption_method_and_cipher__strength__for_removable_data_drives.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "92d4d6e0-b818-4c52-bffa-5921a6e30921",
+      "displayName": "CISv3 - EDGE - L1 - Allow cross-origin HTTP Authentication prompts",
+      "path": "IntuneTemplate/CISv3__EDGE__L1__Allow_crossorigin_HTTP_Authentication_prompts.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "9fcfd67e-9f82-4a97-9364-50528bdeee88",
+      "displayName": "CISv4 - WIN - BL - Choose drive encryption method and cipher  strength fixed data drives",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_drive_encryption_method_and_cipher__strength_fixed_data_drives.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "c39e5044-929b-49ea-818f-d6585810aa2f",
+      "displayName": "CISv4 - WIN - BL - Choose how BitLocker-protected  operating system drives can be recovered: Allow data recovery  agent",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Choose_how_BitLockerprotected__operating_system_drives_can_be_recovered_Allow_data_recovery__agent.json"
+    },
+    {
+      "partition": "IntuneTemplate",
+      "guid": "f59b1553-9e7a-431d-9334-ab2c330e6215",
+      "displayName": "CISv4 - WIN - BL - Allow Warning For Other Disk Encryption",
+      "path": "IntuneTemplate/CISv4__WIN__BL__Allow_Warning_For_Other_Disk_Encryption.json"
+    },
+    {
+      "partition": "IntuneReusableSettingTemplate",
+      "guid": "2b4bedc2-03bf-405f-927e-fb1d593c7e78",
+      "displayName": "Test",
+      "path": "IntuneReusableSettingTemplate/Test.json"
+    },
+    {
+      "partition": "SafeLinksTemplate",
+      "guid": "4176f126-6f28-486f-8bc9-ca0c6aa712e9",
+      "displayName": "4176f126-6f28-486f-8bc9-ca0c6aa712e9",
+      "path": "SafeLinksTemplate/4176f1266f28486f8bc9ca0c6aa712e9.json"
+    },
+    {
+      "partition": "SensitiveInfoTypeTemplate",
+      "guid": "b5443d62-0771-4f02-aa35-6bd194f32839",
+      "displayName": "SIT Test",
+      "path": "SensitiveInfoTypeTemplate/SIT_Test.json"
+    },
+    {
+      "partition": "SensitivityLabelTemplate",
+      "guid": "8f721d4d-4ae8-4875-8844-0d405745cc3b",
+      "displayName": "Test Label",
+      "path": "SensitivityLabelTemplate/Test_Label.json"
+    },
+    {
+      "partition": "TenantAllowBlockListTemplate",
+      "guid": "84916061-178f-4dbb-9e20-63eb8e0f2fac",
+      "displayName": "84916061-178f-4dbb-9e20-63eb8e0f2fac",
+      "path": "TenantAllowBlockListTemplate/84916061178f4dbb9e2063eb8e0f2fac.json"
+    },
+    {
+      "partition": "TransportTemplate",
+      "guid": "adf9f6d1-36fb-438b-a82b-71f3af402b6c.TransportRuleTemplate.json",
+      "displayName": "Block External Auto-forwarding",
+      "path": "TransportTemplate/Block_External_Autoforwarding.json"
+    }
+  ]
+}
