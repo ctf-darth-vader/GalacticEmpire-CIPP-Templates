@@ -1,0 +1,5 @@
+{
+  "PartitionKey": "SafeLinksTemplate",
+  "RowKey": "4176f126-6f28-486f-8bc9-ca0c6aa712e9",
+  "JSON": "{\n  \"TemplateName\": \"Safe Links\",\n  \"TemplateDescription\": \"Template\",\n  \"PolicyName\": \"Templat\",\n  \"EnableSafeLinksForEmail\": true,\n  \"EnableSafeLinksForTeams\": true,\n  \"EnableSafeLinksForOffice\": false,\n  \"TrackClicks\": false,\n  \"AllowClickThrough\": false,\n  \"ScanUrls\": true,\n  \"EnableForInternalSenders\": false,\n  \"DeliverMessageAfterScan\": false,\n  \"DisableUrlRewrite\": true,\n  \"DoNotRewriteUrls\": [],\n  \"AdminDisplayName\": \"Template\",\n  \"EnableOrganizationBranding\": true,\n  \"RuleName\": \"Templat_Rule\",\n  \"State\": true,\n  \"SentToMemberOf\": [],\n  \"RecipientDomainIs\": [],\n  \"ExceptIfSentToMemberOf\": [],\n  \"ExceptIfRecipientDomainIs\": []\n}"
+}
