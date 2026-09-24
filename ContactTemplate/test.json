@@ -1,0 +1,5 @@
+{
+  "PartitionKey": "ContactTemplate",
+  "RowKey": "3bfa8258-e114-472c-ae47-0fc58b09671f",
+  "JSON": "{\n  \"name\": \"test\",\n  \"comments\": \"Contact template created 2026-06-26 10:04:05\",\n  \"displayName\": \"test\",\n  \"firstName\": \"asd\",\n  \"lastName\": \"asd\",\n  \"email\": \"dstast@gmail.com\",\n  \"hidefromGAL\": false,\n  \"streetAddress\": \"asda\",\n  \"postalCode\": \"asd\",\n  \"city\": \"asd\",\n  \"state\": \"asd\",\n  \"website\": \"https://test.com\"\n}"
+}
