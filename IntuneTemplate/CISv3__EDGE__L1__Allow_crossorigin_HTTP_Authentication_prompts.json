@@ -1,0 +1,11 @@
+{
+  "PartitionKey": "IntuneTemplate",
+  "RowKey": "92d4d6e0-b818-4c52-bffa-5921a6e30921",
+  "CATemplate": "",
+  "GUID": "92d4d6e0-b818-4c52-bffa-5921a6e30921",
+  "IntuneTemplate": "",
+  "JSON": "{\r\n  \"Displayname\": \"CISv3 - EDGE - L1 - Allow cross-origin HTTP Authentication prompts\",\r\n  \"Description\": \"This policy setting controls whether third-party sub-content can open a HTTP Basic Auth dialog and is typically disabled.\",\r\n  \"RAWJson\": \"{\\\"name\\\":\\\"CISv3 - EDGE - L1 - Allow cross-origin HTTP Authentication prompts\\\",\\\"description\\\":\\\"This policy setting controls whether third-party sub-content can open a HTTP Basic Auth dialog and is typically disabled.\\\",\\\"settings\\\":[{\\\"id\\\":\\\"0\\\",\\\"settingInstance\\\":{\\\"@odata.type\\\":\\\"#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance\\\",\\\"settingDefinitionId\\\":\\\"device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~httpauthentication_allowcrossoriginauthprompt\\\",\\\"settingInstanceTemplateReference\\\":null,\\\"auditRuleInformation\\\":null,\\\"choiceSettingValue\\\":{\\\"settingValueTemplateReference\\\":null,\\\"value\\\":\\\"device_vendor_msft_policy_config_microsoft_edge~policy~microsoft_edge~httpauthentication_allowcrossoriginauthprompt_0\\\",\\\"children\\\":[]}}}],\\\"platforms\\\":\\\"windows10\\\",\\\"technologies\\\":\\\"mdm\\\",\\\"templateReference\\\":{\\\"templateId\\\":\\\"\\\",\\\"templateFamily\\\":\\\"none\\\",\\\"templateDisplayName\\\":null,\\\"templateDisplayVersion\\\":null}}\",\r\n  \"Type\": \"Catalog\",\r\n  \"GUID\": \"92d4d6e0-b818-4c52-bffa-5921a6e30921\"\r\n}",
+  "Package": "CIS BitLocker",
+  "SHA": "",
+  "Source": ""
+}
