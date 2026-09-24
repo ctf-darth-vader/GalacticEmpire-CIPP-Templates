@@ -1,0 +1,5 @@
+{
+  "PartitionKey": "DlpCompliancePolicyTemplate",
+  "RowKey": "20941cf8-b3e6-478c-9573-d33d90831edf",
+  "JSON": "{\n  \"name\": \"U.K. Financial Data\",\n  \"comments\": \"Helps detect the presence of information commonly considered to be financial information in United Kingdom, including information like credit card, account information, and debit card numbers.\",\n  \"ExchangeLocation\": \"All\",\n  \"Mode\": \"Enable\",\n  \"Comment\": \"Helps detect the presence of information commonly considered to be financial information in United Kingdom, including information like credit card, account information, and debit card numbers.\",\n  \"SharePointLocation\": \"All\",\n  \"TeamsLocation\": \"All\",\n  \"OnPremisesScannerDlpLocation\": \"All\",\n  \"Priority\": 0,\n  \"OneDriveLocation\": \"All\"\n}"
+}
