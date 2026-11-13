@@ -18,6 +18,7 @@
       "name": "Default",
       "logic": "and",
       "conditions": [],
+      "conditionGroups": [],
       "standards": [
         {
           "standard": "ActivityBasedTimeout",
@@ -120,15 +121,10 @@
         },
         {
           "standard": "AppDeploy",
-          "instance": "AppDeploy",
+          "instance": "AppDeploy#m14eb2f05",
           "variables": {
             "mode": "template",
-            "templateIds": [
-              {
-                "label": "Ashe CIPP Test Template",
-                "value": "8fc79ab0-d129-4131-a3b6-d2a224013fbe"
-              }
-            ],
+            "templateIds": "8fc79ab0-d129-4131-a3b6-d2a224013fbe",
             "appids": ""
           },
           "remediateEnabled": true,
@@ -2424,7 +2420,7 @@
           },
           "remediateEnabled": true,
           "alertEnabled": true,
-          "alertOnRemediate": false
+          "alertOnRemediate": true
         },
         {
           "standard": "UserSubmissions",
@@ -2448,9 +2444,45 @@
           "alertOnRemediate": false
         }
       ]
+    },
+    {
+      "name": "Wave 2",
+      "logic": "and",
+      "conditions": [
+        {
+          "type": "manual",
+          "days": 7,
+          "unit": "days"
+        }
+      ],
+      "conditionGroups": [],
+      "standards": [
+        {
+          "standard": "PlannerBlockTaskDelete",
+          "instance": "PlannerBlockTaskDelete",
+          "variables": {},
+          "remediateEnabled": false,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        },
+        {
+          "standard": "TeamsBlockTrialTenants",
+          "instance": "TeamsBlockTrialTenants",
+          "variables": {},
+          "remediateEnabled": false,
+          "alertEnabled": true,
+          "alertOnRemediate": false
+        }
+      ]
     }
   ],
   "referencedTemplates": [
+    {
+      "partition": "AppApprovalTemplate",
+      "guid": "8fc79ab0-d129-4131-a3b6-d2a224013fbe",
+      "displayName": "8fc79ab0-d129-4131-a3b6-d2a224013fbe",
+      "path": "AppApprovalTemplate/8fc79ab0d1294131a3b6d2a224013fbe.json"
+    },
     {
       "partition": "AssignmentFilterTemplate",
       "guid": "8d8e6789-b763-4f22-a8e8-c87fca0f3bb9",
