@@ -1,5 +1,8 @@
 {
   "PartitionKey": "TenantAllowBlockListTemplate",
   "RowKey": "84916061-178f-4dbb-9e20-63eb8e0f2fac",
-  "JSON": "{\n  \"entries\": \"cipp.com.au\",\n  \"listMethod\": \"Allow\",\n  \"NoExpiration\": false,\n  \"listType\": \"Url\",\n  \"templateName\": \"test nameus\",\n  \"RemoveAfter\": false,\n  \"notes\": \"\"\n}"
+  "JSON": "{\n  \"entries\": \"cipp.com.au\",\n  \"listMethod\": \"Allow\",\n  \"NoExpiration\": false,\n  \"listType\": \"Url\",\n  \"templateName\": \"test nameus\",\n  \"RemoveAfter\": false,\n  \"notes\": \"\"\n}",
+  "SHA": "2fdc73d8a0bc5b9320748d8b76b58c6705afc443",
+  "Source": "ctf-darth-vader/GalacticEmpire-CIPP-Templates",
+  "SourcePath": "TenantAllowBlockListTemplate/84916061178f4dbb9e2063eb8e0f2fac.json"
 }
