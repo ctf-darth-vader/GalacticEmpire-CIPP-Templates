@@ -2,6 +2,7 @@
   "PartitionKey": "AssignmentFilterTemplate",
   "RowKey": "8d8e6789-b763-4f22-a8e8-c87fca0f3bb9",
   "JSON": "{\"displayName\":\"CIPP: Managed Devices\",\"description\":\"Company-owned Windows devices\",\"platform\":\"windows10AndLater\",\"rule\":\"(device.deviceOwnership -eq \\\"Company\\\")\",\"assignmentFilterManagementType\":\"devices\",\"GUID\":\"8d8e6789-b763-4f22-a8e8-c87fca0f3bb9\"}",
-  "SHA": "3763f7925b2f9d8da743579f317150a333ce907e",
-  "Source": "BezaluLLC/Shared-Intune-Policy-Templates"
+  "SHA": "a07bd1802050edf9bd2e1429a7be17531406c9eb",
+  "Source": "ctf-darth-vader/GalacticEmpire-CIPP-Templates",
+  "SourcePath": "AssignmentFilterTemplate/CIPP_Managed_Devices.json"
 }
